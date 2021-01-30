@@ -15,7 +15,7 @@
 				<div class="row my-5">
 					<div class="col">
 						<h2>-</h2>
-						<h2>Entidades</h2>
+						<h2>Monitor de productos</h2>
 					</div>
 				</div>
 				<!-- ***************************************************************** -->
@@ -23,20 +23,26 @@
 				<!-- ***************************************************************** -->
 				<div class="row my-5">
 					<div class="col">
-<!-- 						<form action="/entidades/filtrado" method="post"> -->
-							<form action="/filtrado" method="post">
+						<!-- 						<form action="/inventarios/filtrado" method="post"> -->
+						<form action="/filtrado" method="post">
 							<div class="form-row">
 								<div class="col">
-									<label for="fecha_desde">Fecha desde</label> <input
-										id="fecha_desde" name="fecha_desde" type="date"
-										class="form-control" placeholder="Last name"
+									<label for="estado_id">Almacenes</label> <select
+										id="warehouseId" name="warehouseId" class="custom-select"
 										required="required">
+										<c:forEach var="tienda" items="${almacenes}">
+											<option value="${tienda.warehouseId}">${tienda.warehouseName}</option>
+										</c:forEach>
+									</select>
 								</div>
 								<div class="col">
-									<label for="fecha_hasta">Fecha hasta</label> <input
-										id="fecha_hasta" name="fecha_hasta" type="date"
-										class="form-control" placeholder="Last name"
+									<label for="categoryId">Categorias</label> <select
+										id="categoryId" name="categoryId" class="custom-select"
 										required="required">
+										<c:forEach var="cat" items="${categorias}">
+											<option value="${cat.categoryId}">${cat.categoryName}</option>
+										</c:forEach>
+									</select>
 								</div>
 							</div>
 							<div class="row my-3">
@@ -56,20 +62,24 @@
 							<thead class="thead-dark">
 								<tr>
 									<th scope="col">#</th>
-									<th scope="col">Nombre</th>
-									<th scope="col">Apellido</th>
-									<th scope="col">Edad</th>
-									<th scope="col">Fecha de inscripcion</th>
+									<th scope="col">Almacen</th>
+									<th scope="col">Id Producto</th>
+									<th scope="col">Nombre Producto</th>
+									<th scope="col">Precio Lista</th>
+									<th scope="col">Costo Estandar</th>
+									<th scope="col">Inventario</th>
 								</tr>
 							</thead>
 							<tbody>
-								<c:forEach var="entidad" items="${entidades}">
+								<c:forEach var="inventario" items="${inventarios}">
 									<tr>
-										<th scope="row">${entidad.idEntidad}</th>
-										<td>${entidad.nombre}</td>
-										<td>${entidad.apellido}</td>
-										<td>${entidad.edad}</td>
-										<td>${entidad.fecha}</td>
+										<th scope="row">${inventario.inventoriesId}</th>
+										<td>${inventario.warehouseId.warehouseName}</td>
+										<td>${inventario.productId.productId}</td>
+										<td>${inventario.productId.productsName}</td>
+										<td>${inventario.productId.listPrice}</td>
+										<td>${inventario.productId.standarCost}</td>
+										<td>${inventario.quantity}</td>
 									</tr>
 								</c:forEach>
 							</tbody>
@@ -79,7 +89,7 @@
 				</div>
 				<!-- Button trigger modal -->
 				<button type="button" class="btn btn-primary" data-toggle="modal"
-					data-target="#exampleModal">Registrar nueva entidad</button>
+					data-target="#exampleModal">Registrar nuevo inventario</button>
 				<a href="/">
 					<button type="button" class="btn btn-danger">volver</button>
 				</a>
@@ -87,55 +97,52 @@
 				<!-- ***************************************************************** -->
 				<!-- ******************     MODAL REGISTRO   ************************* -->
 				<!-- ***************************************************************** -->
-				
+
 				<div class="modal fade" id="exampleModal" tabindex="-1"
 					aria-labelledby="exampleModalLabel" aria-hidden="true">
 					<div class="modal-dialog">
 						<div class="modal-content">
 							<div class="modal-header">
-								<h5 class="modal-title" id="exampleModalLabel">Nueva
-									entidad</h5>
+								<h5 class="modal-title" id="exampleModalLabel">Nuevo
+									inventario</h5>
 								<button type="button" class="close" data-dismiss="modal"
 									aria-label="Close">
 									<span aria-hidden="true">&times;</span>
 								</button>
 							</div>
-							<form action="/entidades" method="post">
+							<form action="/inventarios" method="post">
 								<div class="modal-body">
 
 									<div class="form-group row">
-										<div class="col-sm-10">
-											<input type="text" class="form-control form-control-user"
-												id="nombre" name="nombre" placeholder="Nombre" required="required">
+										<div class="col">
+											<select id="productId" name="productId" class="custom-select"
+												required="required">
+												<c:forEach var="prd" items="${productos}">
+													<option value="${prd.productId}">${prd.productsName}</option>
+												</c:forEach>
+											</select>
 										</div>
 									</div>
 									<div class="form-group row">
-										<div class="col-sm-10">
-											<input type="text" class="form-control form-control-user"
-												id="apellido" name="apellido" placeholder="Apellido" required="required">
+										<div class="col">
+											<select id="warehouseId" name="warehouseId" class="custom-select"
+												required="required">
+												<c:forEach var="alm" items="${almacenes}">
+													<option value="${alm.warehouseId}">${alm.warehouseName}</option>
+												</c:forEach>
+											</select>
 										</div>
 									</div>
 									<div class="form-group row">
 										<div class="col-sm-10">
 											<input type="number" class="form-control form-control-user"
-												id="edad" name="edad" placeholder="Edad" required="required">
+												id="quantity" name="quantity" placeholder="Cantidad" required="required">
 										</div>
 									</div>
-									<div class="form-group row">
-										<div class="col-sm-10">
-											<input id="fecha" name="fecha" type="date"
-												class="form-control" placeholder="Fecha de inscripcion"
-												required="required">
-										</div>
-
-									</div>
-									<div class="form-group row"></div>
 									<hr>
-
-
 								</div>
 								<div class="modal-footer">
-									<input type="submit" class="btn btn-primary" value="registrar">
+									<input type="submit" class="btn btn-primary " disabled value="registrar">
 									<button type="button" class="btn btn-danger"
 										data-dismiss="modal">Close</button>
 								</div>
@@ -146,9 +153,9 @@
 				<!-- ***************************************************************** -->
 				<!-- ******************   # MODAL REGISTRO   ************************* -->
 				<!-- ***************************************************************** -->
-				
-				
-				
+
+
+
 			</div>
 		</div>
 	</div>

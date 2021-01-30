@@ -26,8 +26,8 @@
 		</div>
 		<div class="row">
 			<div class="col-sm">
-				<a href="/entidades">
-					<button type="button" class="btn btn-success">Ingreso JSP</button>
+				<a href="/inventario">
+					<button type="button" class="btn btn-success">Monitor de productos</button>
 				</a>
 				<hr>
 			</div>

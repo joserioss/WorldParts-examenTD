@@ -14,11 +14,10 @@
 	<div class="collapse navbar-collapse" id="navbarNav">
 		<ul class="navbar-nav ml-auto">
 			<li class="nav-item active"><a class="nav-link"
-				href="/entidades">Entidad<span
-					class="sr-only">(current)</span></a></li>
-			<li class="nav-item">
-            <a class="nav-link" href="/">Home</a>
-          </li>
+				href="/inventario">Monitor<span class="sr-only">(current)</span></a></li>
+			<li class="nav-item"><a class="nav-link" href="/api/inventorie">Rest
+					Inventorie</a></li>
+			<li class="nav-item"><a class="nav-link" href="/">Home</a></li>
 			<li class="nav-item"><a class="nav-link disabled" href="#"
 				tabindex="-1" aria-disabled="true">TD</a></li>
 		</ul>

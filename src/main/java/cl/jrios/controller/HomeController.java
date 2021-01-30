@@ -9,14 +9,15 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import cl.jrios.dto.EntidadFiltradoDTO;
-import cl.jrios.service.impl.EntidadServiceImpl;
+import cl.jrios.service.impl.InventoriesServiceImpl;
 
 @Controller
 @RequestMapping("/")
 public class HomeController {
 	
+	
 	@Autowired
-	private EntidadServiceImpl servicioEntidad;
+	private InventoriesServiceImpl servicioInventories;
 	
 	@GetMapping
 	public String home() {
@@ -25,7 +26,7 @@ public class HomeController {
 	
 	@PostMapping("/filtrado")
 	public String filtrar(ModelMap mapa, @ModelAttribute EntidadFiltradoDTO dto){
-		mapa.put("entidades", servicioEntidad.filtrar(dto));
+		mapa.put("entidades", servicioInventories.listar());
 		return "pages/filtrado";
 	}
 	

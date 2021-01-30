@@ -4,10 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-import cl.jrios.utility.impl.CalculadoraCompleja;
-import cl.jrios.utility.impl.CalculadoraSimple;
-
-public class AplicacionCalculadoraBeneficios {
+public class AplicacionChequeoMargen {
 
 	public static void aplicacionCB() {
 		List<Integer> listaIngreso = new ArrayList<>();
@@ -26,12 +23,5 @@ public class AplicacionCalculadoraBeneficios {
 
 		System.out.println("(US$)");
 		
-//		Calculo beneficios simples
-		ICalculadoraBeneficios iCalculadoraSimple = new CalculadoraSimple();
-		iCalculadoraSimple.calcula(listaIngreso);
-
-//		Calculo beneficios complejos
-		ICalculadoraBeneficios iCalculadoraCompleja = new CalculadoraCompleja();
-		iCalculadoraCompleja.calcula(listaIngreso);
 	}
 }

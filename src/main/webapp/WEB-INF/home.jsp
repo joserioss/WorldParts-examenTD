@@ -31,7 +31,12 @@
 			</div>
 			<div class="col">
 				<a href="/api/entidades">
-					<button type="button" class="btn btn-success">Ingreso API Rest</button>
+					<button type="button" class="btn btn-success">Ingreso API Rest entidades</button>
+				</a>
+			</div>
+			<div class="col">
+				<a href="/api/productos">
+					<button type="button" class="btn btn-success">Ingreso API Rest productos</button>
 				</a>
 			</div>
 		</div>

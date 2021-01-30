@@ -19,24 +19,42 @@
 		</div>
 		<div class="row">
 			<div class="col">
-				<h1>Examen de certificación  N°2</h1>
+				<h1>Examen de certificación N°2</h1>
 				<h3>Talento Digital Para Chile</h3>
+				<hr>
 			</div>
 		</div>
 		<div class="row">
-			<div class="col">
+			<div class="col-sm">
 				<a href="/entidades">
 					<button type="button" class="btn btn-success">Ingreso JSP</button>
 				</a>
+				<hr>
 			</div>
-			<div class="col">
-				<a href="/api/entidades">
-					<button type="button" class="btn btn-success">Ingreso API Rest entidades</button>
+		</div>
+		<div class="row">
+			<div class="col-sm">
+				<a href="/api/product">
+					<button type="button" class="btn btn-success">Ingreso API
+						Rest productos</button>
 				</a>
 			</div>
-			<div class="col">
-				<a href="/api/productos">
-					<button type="button" class="btn btn-success">Ingreso API Rest productos</button>
+			<div class="col-sm">
+				<a href="/api/productCategory">
+					<button type="button" class="btn btn-success">Ingreso API
+						Rest categorias</button>
+				</a>
+			</div>
+			<div class="col-sm">
+				<a href="/api/warehouse">
+					<button type="button" class="btn btn-success">Ingreso API
+						Rest tiendas</button>
+				</a>
+			</div>
+			<div class="col-sm">
+				<a href="/api/inventorie">
+					<button type="button" class="btn btn-success">Ingreso API
+						Rest inventarios</button>
 				</a>
 			</div>
 		</div>

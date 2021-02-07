@@ -15,7 +15,7 @@
 				<div class="row my-5">
 					<div class="col">
 						<h2>-</h2>
-						<h2>Entidade Filtradas</h2>
+						<h2>inventarios Filtradas</h2>
 					</div>
 				</div>
 
@@ -28,20 +28,14 @@
 							<thead class="thead-dark">
 								<tr>
 									<th scope="col">#</th>
-									<th scope="col">Nombre</th>
-									<th scope="col">Apellido</th>
-									<th scope="col">Edad</th>
-									<th scope="col">Fecha de inscripcion</th>
+									
 								</tr>
 							</thead>
 							<tbody>
-								<c:forEach var="entidad" items="${entidades}">
+								<c:forEach var="inventarios" items="${inventarios}">
 									<tr>
-										<th scope="row">${entidad.idEntidad}</th>
-										<td>${entidad.nombre}</td>
-										<td>${entidad.apellido}</td>
-										<td>${entidad.edad}</td>
-										<td>${entidad.fecha}</td>
+										<th scope="row">${inventarios}</th>
+										
 									</tr>
 								</c:forEach>
 							</tbody>
@@ -49,7 +43,7 @@
 
 					</div>
 				</div>
-				<a href="/entidades">
+				<a href="/inventario">
 					<button type="button" class="btn btn-danger">volver</button>
 				</a>
 			</div>

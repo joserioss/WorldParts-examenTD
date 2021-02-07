@@ -47,7 +47,10 @@
 							</div>
 							<div class="row my-3">
 								<div class="col">
-									<button type="submit" class="btn btn-secondary">Buscar</button>
+									<!-- Small modal -->
+									<button type="button" class="btn btn-primary"
+										data-toggle="modal" data-target=".bd-example-modal-sm">Buscar</button>
+
 								</div>
 							</div>
 						</form>
@@ -125,8 +128,8 @@
 									</div>
 									<div class="form-group row">
 										<div class="col">
-											<select id="warehouseId" name="warehouseId" class="custom-select"
-												required="required">
+											<select id="warehouseId" name="warehouseId"
+												class="custom-select" required="required">
 												<c:forEach var="alm" items="${almacenes}">
 													<option value="${alm.warehouseId}">${alm.warehouseName}</option>
 												</c:forEach>
@@ -136,13 +139,15 @@
 									<div class="form-group row">
 										<div class="col-sm-10">
 											<input type="number" class="form-control form-control-user"
-												id="quantity" name="quantity" placeholder="Cantidad" required="required">
+												id="quantity" name="quantity" placeholder="Cantidad"
+												required="required">
 										</div>
 									</div>
 									<hr>
 								</div>
 								<div class="modal-footer">
-									<input type="submit" class="btn btn-primary " disabled value="registrar">
+									<input type="submit" class="btn btn-primary " disabled
+										value="registrar">
 									<button type="button" class="btn btn-danger"
 										data-dismiss="modal">Close</button>
 								</div>
@@ -155,6 +160,13 @@
 				<!-- ***************************************************************** -->
 
 
+				<div class="modal fade bd-example-modal-sm" tabindex="-1"
+					role="dialog" aria-labelledby="mySmallModalLabel"
+					aria-hidden="true">
+					<div class="modal-dialog modal-sm">
+						<div class="modal-content">Objetivo no alcanzado</div>
+					</div>
+				</div>
 
 			</div>
 		</div>

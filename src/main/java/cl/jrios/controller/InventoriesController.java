@@ -30,7 +30,6 @@ public class InventoriesController {
 	@Autowired
 	private ProductCategoriesServiceImpl servicioCategories;
 	
-
 	@Autowired
 	private ProductsServiceImpl servicioProducts;
 	

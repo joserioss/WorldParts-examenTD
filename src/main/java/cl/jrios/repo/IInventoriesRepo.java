@@ -5,4 +5,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import cl.jrios.model.Inventories;
 
 public interface IInventoriesRepo extends JpaRepository<Inventories, Integer>{
+	
+//	List<Inventories> findAllWarehousesAndProducts(Warehouses warehouses,
+//			Products products);
 }
